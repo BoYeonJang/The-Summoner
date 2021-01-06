@@ -1,16 +1,66 @@
-# This is a sample Python script.
+# ⌃R 코드 새로고침
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
+import os
+import random
+import textwrap
+# 타이틀을 1초마다 띄우면서 완성시킨다.
+from time import sleep
+
+print(" _____ _   _ _____   ____  _   _ __  __ __  __  ___  _   _ _____ ____   ")
+sleep(0.5)
+print("|_   _| | | | ____| / ___|| | | |  \/  |  \/  |/ _ \| \ | | ____|  _ \  ")
+sleep(0.5)
+print("  | | | |_| |  _|   \___ \| | | | |\/| | |\/| | | | |  \| |  _| | |_) | ")
+sleep(0.5)
+print("  | | |  _  | |___   ___) | |_| | |  | | |  | | |_| | |\  | |___|  _ <  ")
+sleep(0.5)
+print("  |_| |_| |_|_____| |____/ \___/|_|  |_|_|  |_|\___/|_| \_|_____|_| \_\ ")
+sleep(1)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def title_screen_selections():
+    option = input("> ")
+    if option == "1":
+        start_game()
+    elif option == "2":
+        help_menu()
+    elif option == "3":
+        sys.exit()
+    while option not in ['1', '2', '3']:
+        print("해당 번호 중에서 눌러주세요.")
+        if option == "1":
+            start_game()
+        elif option == "2":
+            help_menu()
+        elif option == "3":
+            sys.exit()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# 타이틀 화면 # 불러오기는 제작 미정
+def title_screen():
+    print("--------------------")
+    print("[1] 시작하기")
+    print("[2] 제작자보기")
+    print("[3] 종료하기")
+    input("--------------------")
+    title_screen_selections()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def help_menu():
+    print("--------------------")
+    print("제작자: 물병자라")
+    print("버전: v0.1")
+    print("수정일자: 2021.01.05")
+    print("문의: waterbottlezara@gmail.com")
+    print("--------------------")
+    title_screen_selections()
+
+
+
+
+
+
+def intro():
+    print("")
+
