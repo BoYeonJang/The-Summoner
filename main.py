@@ -54,25 +54,25 @@ def title_screen_selections():
 
 # 타이틀 화면 선택지 # 불러오기는 제작 미정
 def title_screen():
-    print("--------------------")
+    print("-" * 50)
     print("[1] 시작")
     print("[2] 진행 방법 및 제작자")
     print("[3] 종료")
-    print("--------------------")
+    print("-" * 50)
     title_screen_selections()
 
 
 # 진행 방법 및 제작자
 def help_menu():
-    print("--------------------")
+    print("-" * 50)
     print("제작자: 물병자라")
     print("버전: v0.1")
     print("수정일자: 2021.01.05")
     print("문의: waterbottlezara@gmail.com")
-    print("--------------------")
+    print("-" * 50)
     print("- 여러 직업을 조합하여 나라를 지켜내세요.")
     print("- 여러개의 선택지 중에서 해당하는 번호를 입력해주세요.")
-    print("--------------------")
+    print("-" * 50)
     title_screen_selections()
 
 
@@ -94,17 +94,18 @@ def intro_selections():
 
 # 인트로 화면 선택지
 def intro_screen():
-    print("--------------------")
+    print("-" * 50)
     print("\033[33m" + "The Summoner-소환사-" + "\033[0m" "의 인트로를 보시겠습니까?")
     print("[1] 예. 보겠습니다.")
     print("[2] 아니요. 스킵하겠습니다.")
-    print("--------------------")
+    print("-" * 50)
     intro_selections()
 
 
 # 인트로 화면
 def intro():
-    input("12월 31일.")
+    print("-" * 50)
+    print("12월 31일.")
     input("제야의 종소리를 들으러 보신각에 수만 명의 인파가 모여들었다.")
     input("다가오는 새해를 향해 카운트 다운을 세었다.")
     input("5, 4, 3, 2, 1….")
@@ -131,7 +132,7 @@ def intro():
     input("………….")
     input("……………….")
     input("소환사……?")
-    input("--------------------")
+    print("-" * 50)
     setup_game()
 
 
@@ -146,10 +147,10 @@ def setup_game():
     myPlayer.name = player_name
 
     question2 = "이름이 " + "\033[33m" + player_name + "\033[0m" + "맞습니까?\n" \
-                                                                "--------------------\n" \
+                                                                "--------------------------------------------------\n" \
                                                                 "[1] 맞습니다.\n" \
                                                                 "[2] 아닙니다. 다시 정하겠습니다.\n" \
-                                                                "--------------------\n"
+                                                                "--------------------------------------------------\n"
     for character in question2:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -168,8 +169,39 @@ def setup_game():
             setup_game()
 
 
-title_screen()
+# 메인 게임 선택지
+def start_game_selections():
+    start_game_option = input("> ")
+    if start_game_option == "1":
+        player()
+    elif start_game_option == "2":
+        minions()
+    while True:
+        print("해당 번호 중에서 선택해주세요.")
+        start_game_option = input("> ")
+        if start_game_option == "1":
+            player()
+        elif start_game_option == "2":
+            minions()
 
 
+# 메인 게임
 def start_game():
+    print("-" * 50)
+    print("""[1] 능력치 보기 [2] 소환수 능력치 보기
+    [0] 능력보기 [0] 능력보기""")
+    print("-" * 50)
+    start_game_selections()
+
+
+# 본인 능력치 보기
+def player():
+    print("이름: " + myPlayer.name + "종족: 인간" + "체력: 1000" + "마력: 1000")
+
+
+# 소환수 능력치 보기
+def minions():
     pass
+
+
+title_screen()
