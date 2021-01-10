@@ -105,7 +105,7 @@ def intro_screen():
 # 인트로 화면
 def intro():
     print("-" * 50)
-    print("12월 31일.")
+    input("12월 31일.")
     input("제야의 종소리를 들으러 보신각에 수만 명의 인파가 모여들었다.")
     input("다가오는 새해를 향해 카운트 다운을 세었다.")
     input("5, 4, 3, 2, 1….")
@@ -196,7 +196,8 @@ def start_game():
 
 # 본인 능력치 보기
 def player():
-    print("이름: " + myPlayer.name + "종족: 인간" + "체력: 1000" + "마력: 1000")
+    print("이름: " + myPlayer.name + "    종족: 인간" + "    체력: 1000" + "    마력: 1000")
+    start_game_selections()
 
 
 # 소환수 능력치 보기
