@@ -189,7 +189,7 @@ def start_game_selections():
 def start_game():
     print("-" * 50)
     print("""[1] 능력치 보기 [2] 소환수 능력치 보기
-    [0] 능력보기 [0] 능력보기""")
+    [0] 던전으로 가기 [0] 아이템 구매""")
     print("-" * 50)
     start_game_selections()
 
